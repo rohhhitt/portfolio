@@ -1,0 +1,100 @@
+export const profile = {
+  name: 'Rohit Singh',
+  title: 'Support Engineer / TechOps',
+  location: 'Khatima, Uttarakhand',
+  summary:
+    'Results-driven Support Engineer with 4+ years of experience in developer and production support, incident management, and change management in fast-paced enterprise environments. Proven expertise in troubleshooting complex technical issues, root cause analysis, and ensuring high availability (99.9%+) of critical applications. Skilled in AWS cloud services, REST APIs, webhooks, browser developer tools, and scripting (Python). Adept at supporting developer communities, managing escalations, and enabling seamless app integrations across platforms.',
+  contact: {
+    phone: '7351728718',
+    email: 'rksinghkan@gmail.com',
+  },
+  socials: {
+    linkedin: 'https://linkedin.com/in/rksinghkan',
+    github: 'https://github.com/rohhhitt',
+  },
+  skills: {
+    'Cloud Platforms': [
+      'AWS (EC2, S3, Lambda, IAM, CloudWatch, EventBridge, SNS, SQS)',
+    ],
+    'Developer Support & Incident Management': [
+      'ITIL Framework',
+      'RCA',
+      'Postmortem Documentation',
+      'Escalation Handling',
+    ],
+    'API & Integration': [
+      'REST APIs',
+      'Webhooks',
+      'Functional & Exploratory Testing',
+      'Postman',
+      'Swagger',
+    ],
+    'Scripting & Automation': ['Python', 'JavaScript', 'Bash/Shell'],
+    'Identity & Security': [
+      'OAuth',
+      'JWT',
+      'SSO',
+      'SAML',
+      'LDAP',
+      'Active Directory',
+    ],
+    'Monitoring & Tools': [
+      'Splunk',
+      'AWS CloudWatch',
+      'ServiceNow',
+      'Atlassian Suite (Jira, Confluence)',
+    ],
+    'Version Control': ['Git', 'GitLab'],
+    Databases: ['MySQL', 'PostgreSQL'],
+    'Operating Systems': ['Windows', 'macOS'],
+  },
+  experience: [
+    {
+      role: 'TechOps Engineer',
+      company: 'S&P Global',
+      location: 'Hyderabad',
+      period: '03/2022 – Present',
+      bullets: [
+        'Provided L2/L3 developer and application support for critical enterprise platforms, assisting internal teams and external partners in troubleshooting integrations and customizations.',
+        'Provided developer community and developer ecosystem support via Jira, including handling critical client interactions and resolving a high-impact integration issue for a top-tier partner.',
+        'Managed HOT incident lifecycles, including rapid escalation, root cause analysis, and stakeholder communication to restore services with minimal downtime.',
+        'Conducted functional API testing (REST APIs, webhooks) for new features, validating against business and developer requirements.',
+        'Collaborated with product teams to support app migrations and integration changes across environments.',
+        'Used browser developer tools & HAR files to analyze and resolve front-end performance and integration issues.',
+        'Led change management activities and deployments, ensuring safe deployments with rollback plans.',
+        'Implemented automation scripts (Python) for log analysis, system health checks, and AWS-based reporting workflows.',
+        'Managed a reporting automation project using AWS Lambda, EventBridge, SQS for scheduled report delivery with actionable insights for product teams.',
+        'Authored runbooks, SOPs, and Confluence documentation for faster onboarding and incident resolution.',
+      ],
+    },
+    {
+      role: 'Associate Software Engineer',
+      company: 'IHS Markit',
+      location: 'Hyderabad',
+      period: '03/2021 – 02/2022',
+      bullets: [
+        'Provided application and developer support to enterprise clients, troubleshooting technical issues in collaboration with engineering teams.',
+        'Configured and monitored services via AWS CloudWatch and Splunk, generating performance and error reports.',
+        'Performed SQL queries (MySQL, PostgreSQL) for data validation and debugging.',
+        'Assisted QA in API integration testing, functional verification, and exploratory test cycles.',
+        'Created a reusable knowledge base for recurring issues, improving case resolution speed.',
+      ],
+    },
+  ],
+  education: {
+    degree: 'B.Tech in Computer Science and Engineering',
+    school: 'University of Petroleum & Energy Studies',
+    year: '2021',
+  },
+  certifications: [
+    'H2 2023 Enterprise Solutions Team Excellence Award – S&P Global',
+    'API Development',
+    'Python Programming',
+    'Git & GitHub',
+  ],
+  achievements: [
+    'Reduced average incident resolution time by 30% through automation and streamlined workflows.',
+    'Successfully handled high-severity production incidents ensuring zero data loss and minimal downtime.',
+    'Recognized for cross-team collaboration and exceptional incident handling during critical outages.',
+  ],
+}
