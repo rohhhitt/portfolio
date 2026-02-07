@@ -17,6 +17,8 @@ body {
   color: #1e293b;
   background: #f1f5f9;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* ===== Layout ===== */
@@ -167,7 +169,7 @@ body {
 
 .hero-name {
   margin: 0;
-  font-size: 2.25rem;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.2;
@@ -175,14 +177,14 @@ body {
 
 .hero-title {
   margin: 0.75rem 0 0;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   font-weight: 500;
   color: #bae6fd;
 }
 
 .hero-location {
   margin: 0.35rem 0 0;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
   color: #7dd3fc;
 }
 
@@ -203,7 +205,9 @@ body {
   font-weight: 600;
   font-family: inherit;
   text-decoration: none;
+  border: none;
   border-radius: 10px;
+  cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s, background 0.2s, color 0.2s;
 }
 
@@ -246,64 +250,129 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* ===== Contact cards ===== */
+/* ===== Contact cards (masked for privacy until clicked) ===== */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  max-width: 700px;
+}
+
+@media (max-width: 650px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .contact-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.35rem;
-  padding: 1.25rem 1rem;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
   background: #fff;
   border-radius: 12px;
   border: 1px solid #e2e8f0;
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  transition: all 0.2s ease;
+  min-height: 140px;
 }
 
-.contact-card:hover {
-  border-color: #0ea5e9;
-  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.12);
+@media (hover: hover) {
+  .contact-card:hover {
+    border-color: #0ea5e9;
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.12);
+    transform: translateY(-4px);
+  }
+}
+
+.contact-card:active {
   transform: translateY(-2px);
 }
 
+/* Masked contact (button) – same look as card, no link until revealed */
+.contact-card-masked {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 140px;
+}
+
+@media (hover: hover) {
+  .contact-card-masked:hover {
+    border-color: #0ea5e9;
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.12);
+    transform: translateY(-4px);
+  }
+}
+
+.contact-card-masked:active {
+  transform: translateY(-2px);
+}
+
+.contact-value-masked {
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 .contact-icon {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f1f5f9;
-  border-radius: 10px;
-  font-size: 1.1rem;
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+  border-radius: 12px;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #0369a1;
 }
 
 .contact-icon-gh {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
 }
 
 .contact-label {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: #64748b;
+  margin-top: 0.25rem;
 }
 
 .contact-value {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: #0f172a;
   word-break: break-all;
   text-align: center;
+}
+
+@media (min-width: 500px) {
+  .contact-value {
+    font-size: 0.95rem;
+  }
 }
 
 /* ===== About ===== */
@@ -465,6 +534,46 @@ body {
 }
 
 .footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-link-btn {
+  background: none;
+  border: none;
+  color: #0369a1;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.footer-link-btn:hover {
+  text-decoration: underline;
+}
+
+.footer-dot {
+  margin: 0 0.5rem;
+}ration: none;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  color: #0369a1;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footer-link-btn:hover {
   text-decoration: underline;
 }
 

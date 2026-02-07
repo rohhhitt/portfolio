@@ -11,6 +11,7 @@ export const profile = {
   socials: {
     linkedin: 'https://linkedin.com/in/rksinghkan',
     github: 'https://github.com/rohhhitt',
+    leetcode: 'https://leetcode.com/u/rohhhitt',
   },
   skills: {
     'Cloud Platforms': [
