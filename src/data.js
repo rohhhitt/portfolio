@@ -5,7 +5,6 @@ export const profile = {
   summary:
     'Results-driven Support Engineer with 4+ years of experience in developer and production support, incident management, and change management in fast-paced enterprise environments. Proven expertise in troubleshooting complex technical issues, root cause analysis, and ensuring high availability (99.9%+) of critical applications. Skilled in AWS cloud services, REST APIs, webhooks, browser developer tools, and scripting (Python). Adept at supporting developer communities, managing escalations, and enabling seamless app integrations across platforms.',
   contact: {
-    phone: '7351728718',
     email: 'rksinghkan@gmail.com',
   },
   socials: {
